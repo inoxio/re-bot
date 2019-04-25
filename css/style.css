@@ -302,7 +302,7 @@ animation-delay: .8s;
 }
 .theme-main-menu .navbar-nav>li>a {
   text-transform: uppercase;
-  color:#fff;
+  color:#000;
   font-weight: 700;
   background: transparent;
   padding: 9px 15px;
@@ -402,7 +402,10 @@ animation-delay: .8s;
 .theme-main-header.fixed .logo {
   margin-top: -8px;
 }
-/*** 
+.theme-main-header .re-bot-logo {
+  width: 40px;
+}
+/***
 
 ====================================================================
   Theme Main Banner
@@ -1258,8 +1261,9 @@ footer {
   padding: 60px 0 25px 0;
   text-align: center;
 }
-footer .logo {
+footer .re-bot-logo {
   margin-bottom: 20px;
+  width: 100px;
 }
 footer ul li {
   display: inline-block;
@@ -1620,4 +1624,8 @@ footer p {
 }
 .blog-details-post-wrapper .post-comment form button:hover {
   background:#fff;
+}
+
+.tp-caption h1, .tp-caption h6 {
+  color: #000;
 }
