@@ -1,131 +1,258 @@
-/* Responsive CSS Document */
-
-/* 
-    Created on : 1/15/2017. 
-    Theme Name : BizPro.
-    Description: BizPro- Responsive html5 template.
-    Version    : 1.1.
-    Author     : @SRThemes.
-   
-*/
-
-
-
-@media (min-width: 992px) {
-	.container {
-		padding-left: 0 !important;
-		padding-right: 0 !important;
-	}
-}
-
-@media (max-width: 1366px) {
-  .scroll-top {bottom: 30px; right:30px;}
-
-}
-@media (max-width: 1199px) {
-  #team-section .team-member-wrapper .single-team-member .img .opacity p {padding: 0 15px;}
-  #team-section .team-member-wrapper .single-team-member .img .opacity {padding-top: 20px;}
-  .habilidades_contenedor {margin-top: 100px;}
-}
-/*(max-width: 1199px)*/
-
-@media (max-width: 991px) {
-  .theme-title p,#skill-section .img img {width: 100%;}
-  #skill-section {padding-bottom: 30px;}
-  .blog-details-page aside {margin-top: 100px;}
-  .blog-details-post-wrapper>.row p {margin-bottom: 30px;}
-}
-/*(max-width: 991px)*/
-
 @media (min-width: 992px) and (max-width: 1199px) {
-  .theme-main-header .logo {width: 15%;}
-  .theme-main-menu .navbar-nav>li>a {padding: 9px 12px;}
-  .theme-title p {width: 95%;}
-  #our-client .client-slider p {width: 70%;}
-  .recent-single-post .post {width: 75%;}
+    .menu_area .navbar-brand {
+        font-size: 42px;
+    }
+    .menu_area #nav .nav-link {
+        padding: 35px 7.5px;
+    }
+    .sing-up-button > a {
+        color: #fff;
+        height: 40px;
+        min-width: 152px;
+        line-height: 36px;
+        font-size: 14px;
+    }
+    .welcome-thumb {
+        width: 50%;
+        bottom: -100px;
+        right: 50px;
+    }
+    .video-area {
+        height: 550px;
+    }
+    .app_screenshots_slides {
+        padding: 0 4%;
+    }
+    .header_area.sticky .menu_area #nav .nav-link {
+        padding: 23px 7.5px;
+    }
 }
-/*(min-width: 992px) and (max-width: 1199px)*/
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .theme-main-header .logo {width: 22%; margin: 0 auto;float:none; display: block;}
-  .theme-main-menu.navbar {float:none;margin-top: 30px;}
-  .theme-main-menu .navbar-nav>li>a {padding: 9px 8px;}
-  .theme-main-header.fixed .logo {display: none;}
-  .theme-main-header.fixed .theme-main-menu.navbar {margin-top: 0;}
-  #project-section .project-gallery .grid-item,
-  #team-section .team-member-wrapper .float-left {width: 50%;}
-  #our-client .client-slider p {width: 90%;}
-  .inner-page-banner .opacity {padding-top: 210px;}
+    .header_area {
+        padding: 0;
+    }
+    .menu_area .navbar-brand {
+        font-size: 48px;
+    }
+    .header_area.sticky {
+        height: 50px;
+    }
+    .header_area .menu_area #nav .nav-link,
+    .header_area.sticky .menu_area #nav .nav-link {
+        padding: 7.5px 15px;
+    }
+    #ca-navbar {
+        padding: 30px;
+        border-radius: 3px;
+        background-color: #5b32b4;
+        text-align: left;
+    }
+    .sing-up-button {
+        margin-top: 30px;
+        text-align: left;
+    }
+    .welcome-thumb {
+        width: 50%;
+        bottom: -100px;
+        right: 0;
+    }
+    .wellcome-heading {
+        margin-bottom: 70px;
+    }
+    .single-special {
+        padding: 30px 10px;
+    }
+    .special_description_area.mt-150 {
+        margin-top: 50px;
+    }
+    .special_description_content > h2 {
+        font-size: 30px;
+    }
+    .video-area {
+        height: 350px;
+    }
+    .section-heading > h2 {
+        font-size: 38px;
+    }
+    .address-text > p,
+    .phone-text > p,
+    .email-text > p {
+        font-size: 16px;
+    }
+    .footer-text > p {
+        margin-bottom: 30px;
+    }
+    .section-heading {
+        margin-bottom: 50px;
+    }
+    .sing-up-button > a {
+        margin-top: 4px;
+        display: inline-block;
+        border: 2px solid #a883e9;
+        height: 40px;
+        min-width: 160px;
+        line-height: 36px;
+        font-size: 14px;
+    }
+    .counter-area {
+        min-width: 50px;
+    }
+    .counter-area > h3 {
+        font-size: 30px;
+    }
+    .app_screenshots_slides {
+        padding: 0;
+    }
+    .clients-feedback-area .slick-slide.slick-current img {
+        width: 90px !important;
+        height: 90px !important;
+    }
 }
-/*(min-width: 768px) and (max-width: 991px)*/
 
-@media (max-width: 767px) {
-  .scroll-top {bottom: 10px; right:5px;}
-  .theme-main-header {padding-top: 15px;}
-  .theme-main-header .logo {position: absolute;top:15px;left:15px;z-index: 99;}
-  .theme-main-menu.navbar {float:none;width: 100%;}
-  .theme-main-header.fixed {background: #1e1e1e;max-height: 100%;overflow-y:auto;}
-  .theme-main-menu .navbar-collapse {padding: 0 15px;box-shadow: none;border:none;background: #1e1e1e;margin-top: 15px;}
-  .theme-main-header li.dropdown-holder .fa {display: block;}
-  .theme-main-menu .navbar-nav>li>a {padding: 0;line-height: 44px;}
-  .theme-main-menu.navbar .nav>li ul.sub-menu {
-    position: static;
-    width: 100%;
-    opacity: 1;
-    background: #000;
-    visibility: visible;
-    display: none;
-    padding-left: 25px;
-    -webkit-transition: none;
-       -moz-transition: none;
-        -ms-transition: none;
-         -o-transition: none;
-            transition: none;
-  }
-  #pricing-section .single-price-table {margin-bottom: 50px;}
-  #project-section .project-gallery .grid-item {width: 50%;}
-  #team-section .team-member-wrapper .float-left,
-  #team-section .team-member-wrapper .float-left img,
-  #our-client .client-slider p {width: 100%;}
-  #team-section .team-member-wrapper .float-left,
-  #project-section .project-gallery .grid-item,
-  #service-section .row [class*="col-"],#skill-section [class*="col-"],
-  #pricing-section [class*="col-"],#contact-section .send-message,
-  #contact-section .contact-address-content [class*="col-"],
-  #blog-section [class*="col-"],.theme-main-header .container,
-  .blog-details-page .p-fix {padding-left: 0;padding-right: 0;}
-  
+@media (min-width: 320px) and (max-width: 767px) {
+    .header_area {
+        padding: 0;
+    }
+    .menu_area .navbar-brand {
+        font-size: 48px;
+    }
+    .header_area.sticky {
+        height: 50px;
+    }
+    .header_area .menu_area #nav .nav-link,
+    .header_area.sticky .menu_area #nav .nav-link {
+        padding: 5px 15px;
+    }
+    #ca-navbar {
+        padding: 20px;
+        border-radius: 3px;
+        background-color: #5b32b4;
+        text-align: left;
+    }
+    .sing-up-button {
+        margin-top: 30px;
+        text-align: left;
+    }
+    .header_area {
+        top: 0;
+    }
+    .welcome_text .cd-intro > p {
+        font-size: 14px;
+    }
+    .wellcome-heading > h2 {
+        font-size: 48px;
+    }
+    .get-start-area .email {
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+    .welcome-thumb {
+        width: 90%;
+        bottom: -74px;
+        right: 0;
+    }
+    .logo_area > a > h2 {
+        font-size: 40px;
+        margin-top: 10px;
+    }
+    .section-heading > h2 {
+        font-size: 32px;
+    }
+    .single-special {
+        margin-bottom: 30px;
+    }
+    .special_description_area.mt-150 {
+        margin-top: 50px;
+    }
+    .special_description_content > h2 {
+        font-size: 30px;
+    }
+    .app-download-btn:first-child {
+        margin-right: 0;
+    }
+    .app-download-area {
+        display: block;
+    }
+    .app-download-btn {
+        margin-bottom: 20px;
+    }
+    .video-area {
+        border: 10px solid #fff;
+        border-radius: 20px;
+        height: 250px;
+    }
+    .video-area::after {
+        top: -10px;
+        left: -10px;
+        width: calc(100% + 20px);
+        height: calc(100% + 20px);
+        border: 1px solid #f1f4f8;
+        z-index: 2;
+        border-radius: 20px;
+    }
+    .clients-feedback-area .client-description > p {
+        font-size: 20px;
+    }
+    .clients-feedback-area .slick-slide img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    .clients-feedback-area .slick-slide.slick-current img {
+        width: 70px !important;
+        height: 70px !important;
+    }
+    .membership-description > h2 {
+        font-size: 32px;
+    }
+    .get-started-button {
+        text-align: left;
+        margin-top: 20px;
+    }
+    .contact_from {
+        margin-top: 30px;
+    }
+    .wellcome-heading > h3 {
+        font-size: 252px;
+        top: -105px;
+        left: -1px;
+    }
+    .wellcome-heading,
+    .single-cool-fact {
+        margin-bottom: 50px;
+    }
+    .cool_facts_area .col-12:last-of-type .single-cool-fact {
+        margin-bottom: 0;
+    }
 }
-/*(max-width: 767px)*/
 
-@media (max-width: 650px) {
-  #success, #error {
-    width: 84%;
-    height: auto;
-    top: calc(50% - 50px);
-    left: 8%;
-    padding: 30px 10px;
-    margin:0;
-  }
-  .blog-details-post-wrapper .list-img-wrapper img,
-  .blog-details-post-wrapper .post-share-area ul {float:none; width: 100%;}
-  .blog-details-post-wrapper .list-img-wrapper ul {float:none;padding: 30px 0 0 0;}
-  .blog-details-post-wrapper .post-share-area .share-icon li:first-child {margin-top: 30px;}
+@media (min-width: 480px) and (max-width: 767px) {
+    .wellcome-heading > h3 {
+        font-size: 284px;
+    }
+    .wellcome-heading > h2 {
+        font-size: 70px;
+    }
+    .welcome-thumb {
+        bottom: -109px;
+        width: 75%;
+    }
+    .wellcome-heading {
+        margin-bottom: 50px;
+    }
+    .wellcome-heading > h3 {
+        top: -139px;
+    }
+    .get-start-area .email {
+        max-width: 370px;
+    }
 }
 
-@media (max-width: 550px) {
-  #project-section .project-gallery .grid-item,
-  #project-section .project-gallery .grid-item img {width: 100%;}
-  #project-section .project-menu ul li {font-size: 14px;margin: 15px 2px 0;border-bottom: 1px solid #fff;}
-  #team-section .team-member-wrapper .single-team-member .img .opacity span {margin: 5px 0;}
-  #team-section .team-member-wrapper .single-team-member .member-name ul li a {width: 40px;line-height: 38px;}
-  .banner h1 {font-size: 35px;}
-  .blog-details-post-wrapper .comment-area .single-comment.reply-comment {margin-left: 60px;}
-}
-
-@media (max-width: 430px) {
-  .banner h1 {font-size: 27px;}
-  .banner h6 {font-size: 14px;}
-  .hermes.tparrows {display: none;}
-  .recent-single-post .post {width: 100%;padding: 12px 0 0 0;}
+@media (min-width: 576px) and (max-width: 767px) {
+    .wellcome-heading > h3 {
+        font-size: 286px;
+    }
+    .get-start-area .email {
+        margin-bottom: 0;
+    }
 }
