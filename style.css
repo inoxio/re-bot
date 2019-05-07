@@ -61,6 +61,11 @@ h6 {
   line-height: 1.2;
 }
 
+.larger {
+  font-size: 130%;
+  font-weight:100;
+}
+
 b {
   font-weight:bold;
 }
