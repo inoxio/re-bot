@@ -521,7 +521,7 @@ p {
 .welcome-thumb {
   width: 45%;
   position: absolute;
-  bottom: -130px;
+  bottom: 0;
   right: 85px;
   z-index: 9;
 }
