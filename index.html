@@ -491,7 +491,7 @@
             </div>
             <!-- Form Start-->
             <div class="contact_from">
-              <form action="#" method="post">
+             
                 <!-- Message Input Area Start -->
                 <div class="contact_input_area">
                   <div class="row">
@@ -537,14 +537,42 @@
                     </div>
                     <!-- Single Input Area Start -->
                     <div class="col-12">
-                      <button type="submit" class="btn submit-btn">
+                      <script>
+                        function sendRequest() {
+
+                          let url ="http://www.e-ntegration.de/responder.aspx";
+                          let data = {
+                             senderTxt : document.getElementById("name").value,
+                             senderEmail: document.getElementById("email").value,
+                             msg: document.getElementById("message").value };
+
+                          let formData = new FormData();
+                          formData.append("senderTxt", data.senderTxt);
+                          formData.append("senderEmail", data.senderEmail);
+                          formData.append("msg", data.msg);
+
+                          fetch(url, {
+                              method: 'POST', 
+                              mode: 'no-cors', 
+                              cache: 'no-cache', 
+                              
+                              body: formData
+                          })
+                          .then(response => {
+                            document.getElementById('name').value = "";
+                            document.getElementById('email').value = "";
+                            document.getElementById('message').value = "Thank you for contacting us - we'll get in touch shortly...";
+                          }); 
+                        }
+                      </script>
+                      <button onclick="sendRequest()" class="btn submit-btn">
                         Send Now
                       </button>
                     </div>
                   </div>
                 </div>
                 <!-- Message Input Area End -->
-              </form>
+           
             </div>
           </div>
           <div class="col-md-6">
