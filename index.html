@@ -489,92 +489,31 @@
                 contacting us... :)
               </p>
             </div>
-            <!-- Form Start-->
-            <div class="contact_from">
-             
-                <!-- Message Input Area Start -->
-                <div class="contact_input_area">
-                  <div class="row">
-                    <!-- Single Input Area Start -->
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="name"
-                          id="name"
-                          placeholder="Your Name"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <!-- Single Input Area Start -->
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <input
-                          type="email"
-                          class="form-control"
-                          name="email"
-                          id="email"
-                          placeholder="Your E-mail"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <!-- Single Input Area Start -->
-                    <div class="col-12">
-                      <div class="form-group">
-                        <textarea
-                          name="message"
-                          class="form-control"
-                          id="message"
-                          cols="30"
-                          rows="4"
-                          placeholder="Your Message *"
-                          required
-                        ></textarea>
-                      </div>
-                    </div>
-                    <!-- Single Input Area Start -->
-                    <div class="col-12">
-                      <script>
-                        function sendRequest() {
 
-                          let url ="https://www.re-bot.de/responder.aspx";
-                          let data = {
-                             senderTxt : document.getElementById("name").value,
-                             senderEmail: document.getElementById("email").value,
-                             msg: document.getElementById("message").value };
-
-                          let formData = new FormData();
-                          formData.append("senderTxt", data.senderTxt);
-                          formData.append("senderEmail", data.senderEmail);
-                          formData.append("msg", data.msg);
-
-                          fetch(url, {
-                              method: 'POST', 
-                              mode: 'no-cors', 
-                              cache: 'no-cache', 
-                              
-                              body: formData
-                          })
-                          .then(response => {
-                            document.getElementById('name').value = "";
-                            document.getElementById('email').value = "";
-                            document.getElementById('message').value = "Thank you for contacting us - we'll get in touch shortly...";
-                          }); 
-                        }
-                      </script>
-                      <button onclick="sendRequest()" class="btn submit-btn">
-                        Send Now
-                      </button>
-                    </div>
+            <form id="contactForm" class="contact_form">
+              <div class="contact_input_area">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Your name*" name="name" id="name" required>
                   </div>
                 </div>
-                <!-- Message Input Area End -->
-           
-            </div>
-          </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <input class="form-control" type="email" placeholder="Your email address*" name="email" id="email" required>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <textarea class="form-control" rows="5" placeholder="Your message*" name="content" id="message" required></textarea>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div id="toast"></div>
+                  <button class="btn submit-btn" type="submit" id="submit">Send</button>
+                </div>
+              </div>
+            </form>
+        </div>
           <div class="col-md-6">
             <div class="address-container">
               <h3 class="address-headline">e-ntegration GmbH</h3>
@@ -660,4 +599,55 @@
     <!-- Active JS -->
     <script src="js/active.js"></script>
   </body>
+
+  <script>
+    const form = document.getElementById('contactForm')
+    const url = 'https://2dl99wknse.execute-api.eu-west-1.amazonaws.com/prod/email/send/json'
+    const toast = document.getElementById('toast')
+    const submit = document.getElementById('submit')
+
+    function post(url, body, callback) {
+      var req = new XMLHttpRequest();
+      req.open("POST", url, true);
+      req.setRequestHeader("Content-Type", "application/json");
+      req.addEventListener("load", function () {
+        if (req.status < 400) {
+          callback(null, JSON.parse(req.responseText));
+        } else {
+          callback(new Error("Request failed: " + req.statusText));
+        }
+      });
+      req.send(JSON.stringify(body));
+    }
+    function success () {
+      toast.innerHTML = 'Thanks for sending us a message! We\'ll get in touch with you ASAP.'
+      submit.disabled = false
+      submit.blur()
+      form.name.focus()
+      form.name.value = ''
+      form.email.value = ''
+      form.content.value = ''
+    }
+    function error (err) {
+      toast.innerHTML = 'There was an error with sending your message, hold up until I fix it. Thanks for waiting.'
+      submit.disabled = false
+      console.log(err)
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault()
+      toast.innerHTML = 'Sending'
+      submit.disabled = true
+
+      const payload = {
+        name: form.name.value,
+        email: form.email.value,
+        content: form.content.value
+      }
+      post(url, payload, function (err, res) {
+        if (err) { return error(err) }
+        success()
+      })
+    })
+  </script>
 </html>
